@@ -46,10 +46,17 @@ class Venue(db.Model):
     seeking_talent = Column(Boolean)
     seeking_description = Column(String(500))
     image_link = Column(String(500))
-    shows = db.relationship('Show', backref='Venue', lazy=True)
 
     def __repr__(self):
         return f'<Venue {self.id} {self.name}>'
+
+'''
+Show = db.Table('Show',
+    Column('venue_id', Integer, ForeignKey('Venue.id'), primary_key=True),
+    Column('artist_id', Integer, ForeignKey('Artist.id'), primary_key=True),
+    Column('start_time', DateTime, nullable=False, default=datetime.utcnow)
+)
+'''
 
 
 class Artist(db.Model):
@@ -66,7 +73,6 @@ class Artist(db.Model):
     seeking_venue = Column(Boolean)
     seeking_description = Column(String(500))
     image_link = Column(String(500))
-    shows = db.relationship('Show', backref='Artist', lazy=True)
 
     def __repr__(self):
         return f'<Artist {self.id} {self.name}>'
@@ -75,10 +81,11 @@ class Artist(db.Model):
 class Show(db.Model):
     __tablename__ = 'Show'
 
-    id = Column(Integer, primary_key=True)
-    venue_id = Column(Integer, ForeignKey('Venue.id'))
-    artist_id = Column(Integer, ForeignKey('Artist.id'))
+    venue_id = Column(Integer, ForeignKey('Venue.id'), primary_key=True)
+    artist_id = Column(Integer, ForeignKey('Artist.id'), primary_key=True)
     start_time = Column(DateTime, nullable=False, default=datetime.utcnow)
+    Artist = db.relationship('Artist', backref=db.backref("shows", cascade="all, delete-orphan"), lazy='select')
+    Venue = db.relationship('Venue', backref=db.backref("shows", cascade="all, delete-orphan"), lazy='select')
 
     def __repr__(self):
         return f'<Show {self.id} {self.venue_id} {self.artist_id} {self.start_time}>'
@@ -542,9 +549,9 @@ def shows():
     # displays list of shows at /shows
     # replace with real venues data.
     # num_shows should be aggregated based on number of upcoming shows per venue.
-    show_data = db.session.query(Show, Artist, Venue).filter(Show.venue_id == Venue.id,
-                                                             Show.artist_id == Artist.id).order_by(Show.start_time)
+    # show_data = db.session.query(Show, Artist, Venue).filter(Show.venue_id == Venue.id, Show.artist_id == Artist.id).order_by(Show.start_time)
     # show_data = Show.query.options(db.joinedload(Show.Venue), db.joinedload(Show.Artist)).all()
+    show_data = db.session.query(Show).order_by(Show.start_time)
     if not show_data:
         return render_template('errors/404.html')
     show_to_display = []
@@ -555,7 +562,7 @@ def shows():
             'artist_id': show_item.Artist.id,
             'artist_name': show_item.Artist.name,
             'artist_image_link': show_item.Artist.image_link,
-            'start_time': str(show_item.Show.start_time)
+            'start_time': str(show_item.start_time)
         }]
     return render_template('pages/shows.html', shows=show_to_display)
 
@@ -590,6 +597,7 @@ def create_show_submission():
         flash('Show was successfully listed!')
     except SQLAlchemyError:
         db.session.rollback()
+        print(sys.exc_info())
         flash('An error occurred. Show could not be listed.')
     finally:
         # always close the session
