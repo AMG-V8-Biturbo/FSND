@@ -258,7 +258,7 @@ def create_venue_submission():
     return render_template('pages/home.html')
 
 
-@app.route('/venues/<venue_id>', methods=['DELETE'])
+@app.route('/venues/<venue_id>', methods=['POST'])
 def delete_venue(venue_id):
     # Complete this endpoint for taking a venue_id, and using
     # SQLAlchemy ORM to delete a record. Handle cases where the session commit could fail.
@@ -276,7 +276,7 @@ def delete_venue(venue_id):
     finally:
         # always close the session
         db.session.close()
-    return None
+    return render_template('pages/home.html')
 
 
 #  Artists
