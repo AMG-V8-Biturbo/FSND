@@ -258,7 +258,7 @@ def create_venue_submission():
     return render_template('pages/home.html')
 
 
-@app.route('/venues/<venue_id>', methods=['POST'])
+@app.route('/venues/<venue_id>', methods=['DELETE'])
 def delete_venue(venue_id):
     # Complete this endpoint for taking a venue_id, and using
     # SQLAlchemy ORM to delete a record. Handle cases where the session commit could fail.
@@ -582,7 +582,7 @@ def create_show_submission():
     # on unsuccessful db insert, flash an error instead.
     # e.g., flash('An error occurred. Show could not be listed.')
     # see: http://flask.pocoo.org/docs/1.0/patterns/flashing/
-    form = ShowForm(request.form)
+    #form = ShowForm(request.form)
     #if not form.validate():
     #    flash('An error occurred. Input is invalid.')
     #    return render_template('pages/home.html')
