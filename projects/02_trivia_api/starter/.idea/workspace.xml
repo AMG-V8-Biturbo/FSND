@@ -10,13 +10,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.34791666">
+    <splitter split-orientation="horizontal" split-proportion="0.28854167">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/backend/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1065">
+                <state relative-caret-position="1020">
                   <caret line="71" selection-start-line="71" selection-end-line="71" />
                   <folding>
                     <element signature="e#0#9#0" expanded="true" />
@@ -28,7 +28,7 @@
           <file leaf-file-name="test_flaskr.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/backend/test_flaskr.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2625">
+                <state relative-caret-position="2685">
                   <caret line="184" selection-start-line="184" selection-end-line="184" />
                   <folding>
                     <element signature="e#0#9#0" expanded="true" />
@@ -40,8 +40,8 @@
           <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/backend/flaskr/__init__.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="585">
-                  <caret line="213" column="32" lean-forward="true" selection-start-line="213" selection-start-column="16" selection-end-line="213" selection-end-column="32" />
+                <state relative-caret-position="645">
+                  <caret line="213" column="32" selection-start-line="213" selection-start-column="16" selection-end-line="213" selection-end-column="32" />
                   <folding>
                     <element signature="e#0#9#0" expanded="true" />
                   </folding>
@@ -52,13 +52,13 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/backend/README.md">
               <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                 <state split_layout="SPLIT">
-                  <first_editor relative-caret-position="334">
-                    <caret line="95" column="41" lean-forward="true" selection-start-line="95" selection-start-column="41" selection-end-line="95" selection-end-column="41" />
+                  <first_editor relative-caret-position="319">
+                    <caret line="95" column="41" selection-start-line="95" selection-start-column="41" selection-end-line="95" selection-end-column="41" />
                   </first_editor>
                   <second_editor />
                 </state>
@@ -114,25 +114,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="starter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="F:/Udacity/SQL_ORM.py" />
@@ -241,6 +223,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.12604167" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -262,28 +245,48 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49947917" weight="0.24335814" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12604167" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49947917" weight="0.24335814" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5005208" side_tool="true" weight="0.32943678" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/backend/flaskr/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3090">
+          <caret line="213" column="32" lean-forward="true" selection-start-line="213" selection-start-column="16" selection-end-line="213" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1425">
+            <caret line="95" column="41" lean-forward="true" selection-start-line="95" selection-start-column="41" selection-end-line="95" selection-end-column="41" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
@@ -560,7 +563,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
+        <state relative-caret-position="1020">
           <caret line="71" selection-start-line="71" selection-end-line="71" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
@@ -570,7 +573,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/test_flaskr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2625">
+        <state relative-caret-position="2685">
           <caret line="184" selection-start-line="184" selection-end-line="184" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
@@ -580,8 +583,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/flaskr/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="213" column="32" lean-forward="true" selection-start-line="213" selection-start-column="16" selection-end-line="213" selection-end-column="32" />
+        <state relative-caret-position="645">
+          <caret line="213" column="32" selection-start-line="213" selection-start-column="16" selection-end-line="213" selection-end-column="32" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
@@ -591,8 +594,8 @@
     <entry file="file://$PROJECT_DIR$/backend/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="334">
-            <caret line="95" column="41" lean-forward="true" selection-start-line="95" selection-start-column="41" selection-end-line="95" selection-end-column="41" />
+          <first_editor relative-caret-position="319">
+            <caret line="95" column="41" selection-start-line="95" selection-start-column="41" selection-end-line="95" selection-end-column="41" />
           </first_editor>
           <second_editor />
         </state>

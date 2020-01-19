@@ -7,9 +7,9 @@ from urllib.request import urlopen
 
 app = Flask(__name__)
 
-AUTH0_DOMAIN = @TODO_REPLACE_WITH_YOUR_DOMAIN
-ALGORITHMS = ['RS256']
-API_AUDIENCE = @TODO_REPLACE_WITH_YOUR_API_AUDIENCE
+AUTH0_DOMAIN = 'hs-dev-auth.auth0.com'
+ALGORITHMS = ['HS256']
+API_AUDIENCE = 'https://hs-dev-auth.auth0.com/api/v2/'
 
 
 class AuthError(Exception):
@@ -57,6 +57,7 @@ def verify_decode_jwt(token):
     unverified_header = jwt.get_unverified_header(token)
     rsa_key = {}
     if 'kid' not in unverified_header:
+        print('invalid_header')
         raise AuthError({
             'code': 'invalid_header',
             'description': 'Authorization malformed.'
@@ -72,6 +73,7 @@ def verify_decode_jwt(token):
                 'e': key['e']
             }
     if rsa_key:
+        print(rsa_key)
         try:
             payload = jwt.decode(
                 token,
@@ -80,16 +82,18 @@ def verify_decode_jwt(token):
                 audience=API_AUDIENCE,
                 issuer='https://' + AUTH0_DOMAIN + '/'
             )
-
+            print(payload)
             return payload
 
         except jwt.ExpiredSignatureError:
+            print('token_expired')
             raise AuthError({
                 'code': 'token_expired',
                 'description': 'Token expired.'
             }, 401)
 
         except jwt.JWTClaimsError:
+            print('Incorrect claims')
             raise AuthError({
                 'code': 'invalid_claims',
                 'description': 'Incorrect claims. Please, check the audience and issuer.'
@@ -122,3 +126,15 @@ def requires_auth(f):
 def headers(payload):
     print(payload)
     return 'Access Granted'
+
+
+if __name__ == '__main__':
+    # Init our Data
+    payload = {'what':'ThisIsMyToken'}
+    algo = 'HS256'  # HMAC-SHA 256
+    secret = 'hOAVpW9aORviRQ-udkR5g-nievSSGdIcEUkcFpZ68LJ30PvQfFSWrdLLg5fx19av'
+    header = {'kid': 'NDFEQTlFQkM0RUQ5RjY1MjhCNDI1NkRBMUFDQzhGNzU5RTBERjExMQ'}
+    # Encode a JWT
+    encoded_jwt = jwt.encode(payload, secret, algorithm=algo, headers=header)
+    print(encoded_jwt)
+    app.run()
